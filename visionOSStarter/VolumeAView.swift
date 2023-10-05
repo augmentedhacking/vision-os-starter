@@ -50,16 +50,16 @@ struct VolumeAView: View {
             
             let moveDown = Transform(translation: [0, -0.1, 0])
 
-            let spin = FromToByAnimation<Transform>(
-                name: "spin",
+            let upDown = FromToByAnimation<Transform>(
+                name: "upDown",
                 by: moveDown,
                 duration: 2,
                 timing: .easeInOut,
                 bindTarget: .transform,
                 repeatMode: .autoReverse)
 
-            if let spinAnimation = try? AnimationResource.generate(with: spin) {
-                sphere.playAnimation(spinAnimation)
+            if let upDownAnimation = try? AnimationResource.generate(with: upDown) {
+                sphere.playAnimation(upDownAnimation)
             }
             
             
