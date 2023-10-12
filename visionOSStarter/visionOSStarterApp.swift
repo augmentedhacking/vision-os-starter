@@ -37,5 +37,11 @@ struct visionOSStarterApp: App {
         }
         .windowStyle(.volumetric)
         .defaultSize(width: 1.0, height: 0.5, depth: 1.0, in: .meters)
+
+        // Space A container.
+        ImmersiveSpace(id: "spaceA") {
+            VolumeAView()
+        }
+        .immersionStyle(selection: .constant(.mixed), in: .mixed, .progressive, .full)
     }
 }

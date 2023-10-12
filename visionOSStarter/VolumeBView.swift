@@ -75,8 +75,8 @@ struct VolumeBView: View {
     }
 }
 
-#Preview(windowStyle: .volumetric) {
-    VolumeAView()
+#Preview(immersionStyle: .mixed) {
+    VolumeBView()
 }
 
 

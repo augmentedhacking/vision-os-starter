@@ -10,6 +10,7 @@ import SwiftUI
 
 struct LaunchView: View {
     @Environment(\.openWindow) private var openWindow
+    @Environment(\.openImmersiveSpace) private var openImmersiveSpace
 
     var body: some View {
         VStack(spacing: 30) {
@@ -27,6 +28,12 @@ struct LaunchView: View {
 
                 Button("Show Volume B") {
                     openWindow(id: "volumeB")
+                }
+
+                Button("Show Space A") {
+                    Task {
+                        await openImmersiveSpace(id: "spaceA")
+                    }
                 }
             }
         }
